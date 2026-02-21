@@ -17,9 +17,9 @@ export default function App(){
     // useEffect Hook for error handling and re-rendering.
     useEffect(() => {
         async function fetchData(): Promise<void> {
-            const rawData = await fetch("https://rickandmortyapi.com/api/character");
-            const {results} : {results: Character[]} = await rawData.json();
-            setData(results);
+            const rawData = await fetch("https://dragonball-api.com/api/characters");
+            const {items} : {items: Character[]} = await rawData.json();
+            setData(items);
         }
         fetchData()
             .then(() => console.log("Data fetched successfully"))
