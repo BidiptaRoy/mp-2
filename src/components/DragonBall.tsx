@@ -22,7 +22,7 @@ const SingleCharDiv = styled.div`
     text-align: center;
 `;
 
-export default function RickAndMorty(props : { data:Character[] } ){
+export default function DragonBall(props : { data:Character[] } ){
     return (
         <AllCharsDiv >
             {

@@ -1,4 +1,4 @@
-import RickAndMorty from "./components/RickAndMorty.tsx";
+import DragonBall from "./components/DragonBall.tsx";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
 import type {Character} from "./interfaces/Charcters.ts";
@@ -6,7 +6,17 @@ import type {Character} from "./interfaces/Charcters.ts";
 const ParentDiv=styled.div`
     width: 80vw;
     margin: auto;
-    border: 5px darkgoldenrod solid;
+    border: 8px solid navy;
+    border-radius: 16px;
+    padding: 6.5rem;
+`;
+
+const Title = styled.h1`
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: darkorange;
+    letter-spacing: 1px;
 `;
 
 export default function App(){
@@ -28,7 +38,10 @@ export default function App(){
 
     return(
         <ParentDiv>
-            <RickAndMorty data={data}/>
+            <div>
+                <Title>Dragon Ball Characters</Title>
+                <DragonBall data={data} />
+            </div>
         </ParentDiv>
     )
 }
