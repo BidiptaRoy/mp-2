@@ -8,15 +8,15 @@ const AllCharsDiv=styled.div`
     background-color: bisque;
 `;
 
-const SingleCharDiv=styled.div<{status: string}>`
+const SingleCharDiv = styled.div`
     display: flex;
     flex-direction: column;   
     justify-content: center;
     max-width: 30%;
     padding: 2%;
     margin: 1%;
-    background-color: ${(props)=>(props.status === "Alive" ? 'darkorange' : 'black')};
-    color: ${(props) => (props.status !== "Alive" ? 'white' : 'black')};
+    background-color: darkorange;
+    color: black;
     border: 3px darkred solid;
     font: italic small-caps bold calc(2px + 1vw) Papyrus, fantasy;
     text-align: center;
@@ -27,9 +27,11 @@ export default function RickAndMorty(props : { data:Character[] } ){
         <AllCharsDiv >
             {
                 props.data.map((char: Character) =>
-                    <SingleCharDiv key={char.id} status={char.status}>
+                    <SingleCharDiv key={char.id}>
                         <h1>{char.name}</h1>
-                        <p>{char.species !== "Human" ? "(Not Human)" : ""}</p>
+                        <p>Race: {char.race}</p>
+                        <p>Power: {char.ki}</p>
+                        <p>Affiliation: {char.affiliation}</p>
                         <img src={char.image} alt={`image of ${char.name}`} />
                     </SingleCharDiv>
                 )
